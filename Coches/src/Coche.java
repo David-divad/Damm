@@ -16,6 +16,7 @@ enum TIPO_SEGURO {TODO_RIESGO, TERCEROS};
 enum TIPO_COCHE {SIN_CARNET, UTILITARIO, FAMILIAR, DEPORTIVO};
 
 public class Coche {
+
 	protected String 		marca;
 	protected String 		modelo;
 	protected String 		color;

@@ -6,16 +6,16 @@ public class Main {
 		Coche coche1 = new Coche(
 				"Seat", 
 				"Leon", 
-				"Amarillo", 
+				"Negro", 
 				"A-12345", 
-				TIPO_SEGURO.TODO_RIESGO
+				TIPO_SEGURO.TERCEROS
 		);
 		
 		Coche coche2 = new Coche(
 				"Ford", 
 				"GT40", 
 				"Amarillo", 
-				"A-54321", 
+				"Z-12321", 
 				TIPO_SEGURO.TODO_RIESGO
 		);
 		

@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+=======
+*~
+
+>>>>>>> ebd17a05a636b1ce72a2aaba85b13437b7054142
 bin/*
 
 *.class
@@ -5,4 +10,8 @@ bin/*
 # Package Files #
 *.jar
 *.war
+<<<<<<< HEAD
 *.ear
+=======
+*.ear
+>>>>>>> ebd17a05a636b1ce72a2aaba85b13437b7054142

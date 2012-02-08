@@ -1,5 +1,6 @@
 
 public class Cuenta {
+	
 	private String titular;
 	private float  saldo;
 	
@@ -13,12 +14,19 @@ public class Cuenta {
 		saldo = ingreso;
 	}
 	
+	/*
+	 * Devuelve la cantidad que no se ha podido ingresar (no se admiten
+	 * numeros en rojo).
+	 */
 	float reintegro(float cantidad)
 	{
-		if (saldo < cantidad) {
+		if (saldo > cantidad) {
+			saldo -= cantidad;
 			return 0;
 		} else {
-			return (saldo -= cantidad);
+			float d = cantidad - saldo;
+			saldo = 0;
+			return d;
 		}
 	}
 	

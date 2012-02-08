@@ -12,6 +12,8 @@ public class TestFiguras {
 		
 		Circulo c1 = new Circulo(new Punto(5,5), 10);
 		
+		d = p1.calcularDistanciaDesde(c1.getCenter());
+		
 		System.out.printf("Perimetro del circulo %.2f\n", c1.getPerimetro());
 		System.out.printf("Area del circulo %.2f\n", c1.getArea());
 		System.out.printf("Distancia entre el primer punto y el circulo %.2f\n", d);

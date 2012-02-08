@@ -1,5 +1,5 @@
 
-public class Circulo {
+public class Circulo implements Figura {
 	
 	private Punto center;
 	private double radio;

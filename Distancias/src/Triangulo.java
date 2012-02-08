@@ -1,5 +1,5 @@
 
-public class Triangulo {
+public class Triangulo implements Figura {
 	
 	private Punto[] vertices = new Punto[3];
 	

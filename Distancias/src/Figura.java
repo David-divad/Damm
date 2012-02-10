@@ -1,5 +1,5 @@
 
 public interface Figura {
-	public double getArea();
+	public double getArea() throws Exception;
 	public double getPerimetro();
 }

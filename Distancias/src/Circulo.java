@@ -7,7 +7,7 @@ public class Circulo implements Figura {
 	public Circulo(Punto center, double radio)
 	{
 		this.center = center;
-		this.radio = radio;
+		this.radio  = radio;
 	}
 	
 	public double getPerimetro()
@@ -39,6 +39,4 @@ public class Circulo implements Figura {
 	{
 		this.center = center;
 	}
-	
-	
 }

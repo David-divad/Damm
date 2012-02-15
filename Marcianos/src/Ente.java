@@ -11,11 +11,12 @@ class Ente {
 	protected String nombre;
 	protected final String soy;
 	
-	public Ente(String nombre)
+	public Ente(String nombre, String soy)
 	{
 			this.nombre = nombre;
-			nace();
-	}
+			this.soy = soy;
+            nace();
+    }
 	
 	public void nace()
 	{

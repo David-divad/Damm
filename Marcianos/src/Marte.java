@@ -16,7 +16,8 @@ public class Marte {
 		
 		Marciano et4 = new Marciano("et4");
 		et4.escribeNMarcianos();
-		
+	
+
 		et1.escribeEstado();
 		et2.escribeEstado();
 		et3.escribeEstado();

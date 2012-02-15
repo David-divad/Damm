@@ -1,20 +1,18 @@
 
 
-public class Marciano {
+public class Marciano extends Ente {
 
-	private  boolean vivo = false;
-	private String nombre;
 	private static int nMarcianos = 0;
-	private final String soy = "marciano";
-	
+    //protected final String soy = "marciano";
+
 	public Marciano(String nombre)
 	{
-			this.nombre = nombre;
+			super(nombre, "marciano");
+            //soy = "marciano";
 			nMarcianos++;
-			nace();
 	}
 	
-	public void nace()
+	/*public void nace()
 	{
 		vivo = true;
 		System.out.printf("Hola, he nacido y soy el %s %s\n", soy, nombre);
@@ -42,14 +40,14 @@ public class Marciano {
 		throw new decisionNoValidaException(
 				"No puedo saber esto, solo comtemplo mi estado"
 		);
-	}
+	}*/
 	
 	public void escribeNMarcianos()
 	{
 		System.out.printf("el numero de %ss vivos es: %d\n", soy, nMarcianos);
 	}
 	
-	public void escribeEstado()
+	/*public void escribeEstado()
 	{
 		String estado;
 		
@@ -67,14 +65,14 @@ public class Marciano {
 	public void setNombre(String nombre) 
 	{
 		this.nombre = nombre;
-	}
+	}*/
 
 	public static int getNMarcianos() 
 	{
 		return nMarcianos;
 	}
 
-	public static void setNMarcianos(int nMarcianos) 
+	/*public static void setNMarcianos(int nMarcianos) 
 	{
 		Marciano.nMarcianos = nMarcianos;
 	}
@@ -82,5 +80,5 @@ public class Marciano {
 	public String getSoy() 
 	{
 		return soy;
-	}
+	}*/
 }

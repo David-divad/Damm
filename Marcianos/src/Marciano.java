@@ -1,12 +1,7 @@
 
-class decisionNoValidaException extends Exception {
-	public decisionNoValidaException(String msg)
-	{
-		super(msg);
-	}
-}
 
 public class Marciano {
+
 	private  boolean vivo = false;
 	private String nombre;
 	private static int nMarcianos = 0;
@@ -45,7 +40,7 @@ public class Marciano {
 		}
 		
 		throw new decisionNoValidaException(
-				"No saber esto, solo comtemplo mi estado"
+				"No puedo saber esto, solo comtemplo mi estado"
 		);
 	}
 	
@@ -61,7 +56,7 @@ public class Marciano {
 		if (vivo) { estado = "vivo"; }
 		else { estado = "muerto"; }
 		
-		System.out.printf("Soy el marciano %s y estoy %s\n", nombre, estado);
+		System.out.printf("Soy el %s %s y estoy %s\n", soy, nombre, estado);
 	}
 	
 	public String getNombre() 

@@ -1,12 +1,4 @@
 
-/*
-– Desarrollar una clase llamada GestionProfesor que:
-?? Cree e inicialice tres Asignaturas cualesquiera
-?? Cree un alumno con las tres asignaturas
-?? Cree un profesor que le ponga las calificaciones al alumno y
-muestre en pantalla la media del alumno.
- */
-
 class GestionProfesor {
 
 	static private boolean debug = false;

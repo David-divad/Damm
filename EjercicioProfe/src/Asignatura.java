@@ -37,4 +37,13 @@ class Asignatura {
     	
         this.calificacion = calificacion;
     }
+    
+    public boolean calificacionAsignada()
+    {
+    	if ( calificacion == Float.NaN ) {
+    		return false;
+    	}
+    	
+    	return true;
+    }
 }

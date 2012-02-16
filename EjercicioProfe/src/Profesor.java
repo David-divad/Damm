@@ -1,12 +1,4 @@
 
-/*
- *  Una clase llamada Profesor con:
-?? un método llamado ponerNotas que recibe un parámetro de tipo Alumno
-y permitirá poner una calificación aleatoria a cada una de las asignaturas
-que tenga el alumno
-?? un método que recibido un alumno permita calcular y devolver su media
-*/
-
 import java.util.*;
 
 class Profesor {
@@ -52,16 +44,25 @@ class Profesor {
 		}	
     }
 
+    /**
+     * Calcula la media de todas las asignaturas que tengan nota asignada.
+     */
     public float getMediaNotas(Alumno alumno)
     {
         Collection<Asignatura> asignaturas = alumno.getAsignaturas();
         float media = 0.0f;
-
-        for(Asignatura c : asignaturas) {    
-            media += c.getCalificacion();
+        int nNotas = 0;
+        
+        for(Asignatura c : asignaturas) {
+        	
+        	/* comprobamos si tiene nota asignada */
+        	if ( c.calificacionAsignada() ) {
+        		media += c.getCalificacion();
+        		nNotas++;
+        	} 
 		}
         
-        return media / asignaturas.size();
+        return media / (float)nNotas;
     }
 }
 

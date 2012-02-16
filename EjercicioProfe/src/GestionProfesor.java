@@ -1,0 +1,42 @@
+
+/*
+– Desarrollar una clase llamada GestionProfesor que:
+?? Cree e inicialice tres Asignaturas cualesquiera
+?? Cree un alumno con las tres asignaturas
+?? Cree un profesor que le ponga las calificaciones al alumno y
+muestre en pantalla la media del alumno.
+ */
+
+class GestionProfesor {
+
+	static private boolean debug = false;
+	
+    public static void main(String[] args)
+    {
+    	try {
+    		
+	        Asignatura a1 	  = new Asignatura("Matematicas");
+	        Asignatura a2 	  = new Asignatura("FOL");
+	        Asignatura a3 	  = new Asignatura("BBDD");
+	        Alumno alumno 	  = new Alumno();
+	        Profesor profesor = new Profesor();
+	
+	        alumno.addAsignatura(a1);
+	        alumno.addAsignatura(a2);
+	        alumno.addAsignatura(a3);
+	        
+	        profesor.ponerNotas(alumno);
+	        System.out.printf("La media es: %.2f\n", profesor.getMediaNotas(alumno));
+	     
+	        System.out.println("El programa ha terminado correctamente...");
+	        
+    	} catch (Exception e) {
+    		
+    		if (debug) {
+    			e.printStackTrace();
+    		} else {
+    			System.err.println("El programa no ha terminado incorrectamente...");
+    		}
+    	}
+    }
+}

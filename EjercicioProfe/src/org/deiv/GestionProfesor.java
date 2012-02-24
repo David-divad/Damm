@@ -1,3 +1,4 @@
+package org.deiv;
 
 class GestionProfesor {
 
@@ -7,7 +8,7 @@ class GestionProfesor {
     {
     	try {
     		
-	        Asignatura a1 	  = new Asignatura("Matematicas");
+	        Asignatura a1 	  = new Asignatura("Programación");
 	        Asignatura a2 	  = new Asignatura("FOL");
 	        Asignatura a3 	  = new Asignatura("BBDD");
 	        Alumno alumno 	  = new Alumno();
@@ -27,7 +28,7 @@ class GestionProfesor {
     		if (debug) {
     			e.printStackTrace();
     		} else {
-    			System.err.println("El programa no ha terminado incorrectamente...");
+    			System.err.println("El programa no ha terminado correctamente...");
     		}
     	}
     }

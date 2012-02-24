@@ -1,3 +1,4 @@
+package org.deiv;
 
 import java.util.*;
 
@@ -21,11 +22,12 @@ class Profesor {
 				} catch ( InputMismatchException e ) {
 						
 					System.err.println("El caracter introducido no es valido");
-					System.err.println("Solo se admiten numeros decimales entre 0 y 10");	
-					System.out.println("Desea continuar introduciendo notas? (si/no):");
+					System.err.println("Solo se admiten numeros decimales entre 0 y 10");
+                    System.err.flush();
+					System.out.println("¿Desea continuar introduciendo notas? (si/no):");
 					
 					/* 
-					 * Nos deshacemos de la posible basura que haya en el buffer antes
+					 * Nos deshacemos del caracter(es) que haya en el buffer antes
 					 * de leer la respuesta.
 					 */
 					scanner.nextLine(); 

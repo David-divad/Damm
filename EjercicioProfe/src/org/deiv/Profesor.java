@@ -46,6 +46,21 @@ class Profesor {
 		}	
     }
 
+    public void ponerNotasAlAzar(Alumno alumno)
+    {
+
+        for(Asignatura c : alumno.getAsignaturas()) {
+
+    	    double r = Math.random();
+            float nota = (float) r * 10;
+
+            System.out.printf("La nota para %s: %.2f\n", c.getNombre(), nota);
+
+
+            c.setCalificacion( nota );
+        }
+    }
+
     /**
      * Calcula la media de todas las asignaturas que tengan nota asignada.
      */

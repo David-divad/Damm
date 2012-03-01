@@ -56,7 +56,6 @@ class Profesor {
 
             System.out.printf("La nota para %s: %.2f\n", c.getNombre(), nota);
 
-
             c.setCalificacion( nota );
         }
     }

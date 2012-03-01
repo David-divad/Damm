@@ -96,7 +96,7 @@ public class Triangulo implements Figura {
 		double ang_pi = Math.atan2((double)pi.getX(),(double)pi.getY());
 		double ang_pj = Math.atan2((double)pj.getX(),(double)pj.getY());
 	
-		//hallamos la diferencia
+		/* Hallamos la diferencia */
 		double ang = ang_pj - ang_pi;
 		
 		return Math.abs(ang * 180/ Math.PI);

@@ -18,13 +18,13 @@ class GestionProfesor {
 	        alumno.addAsignatura(a2);
 	        alumno.addAsignatura(a3);
 	       
-            double r = Math.random();
+		double r = Math.random();
 
-            if (r > 0.30) {
-                profesor.ponerNotas(alumno);
-            } else {
-                profesor.ponerNotasAlAzar(alumno);
-            }
+		if (r > 0.30) {
+		    profesor.ponerNotas(alumno);
+		} else {
+		    profesor.ponerNotasAlAzar(alumno);
+		}
 
 	        System.out.printf("La media es: %.2f\n", profesor.getMediaNotas(alumno));
 	     

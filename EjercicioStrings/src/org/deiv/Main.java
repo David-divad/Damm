@@ -25,59 +25,54 @@ class Main {
 
     public static int cuentaCaracter(String cadena, char caracter)
     {
-        char[] caracteres = cadena.toLowerCase().toCharArray();
         int total = 0;
 
-        for (int x = 0; x < caracteres.length; x++) {
+        for (char c : cadena.toLowerCase().toCharArray() ) {
 
-            if(caracteres[x] == caracter) {
-                total++;
-            }
+            if ( c == caracter ) { total++; }
         }
 
         return total;
     }
 
-    public static int cuentaCaracteres(String cadena, String caracter)
+    public static int cuentaCaracteres(String cadena, String caracteres)
     {
         int total = 0;
-        char[] caracteres = caracter.toLowerCase().toCharArray();
 
-        for (int x = 0; x < caracteres.length; x++) {
-            total += cuentaCaracter(cadena, caracteres[x]);
+        for ( char c : caracteres.toLowerCase().toCharArray() ) {
+
+            total += cuentaCaracter(cadena, c);
         }
 
         return total;
     }
 
-    public static int posicionCaracter(String cadena,  char caracter, boolean reverse)
+    public static int posicionCaracter(String ocadena, String caracter, boolean reverse)
     {
-        if ( reverse ) {
-            return cadena.toLowerCase().lastIndexOf(caracter);
-        } else {
-            return cadena.toLowerCase().indexOf(caracter);
-        }
-    }
+        String cadena = ocadena.toLowerCase();
+        int posicion  = 0;
 
-    public static int posicionCaracter(String cadena,  String caracter, boolean reverse)
-    {
-        char[] caracteres = caracter.toLowerCase().toCharArray();
-        int posicion = -1;
+        if (reverse) cadena = new StringBuffer(ocadena).reverse().toString();   
         
-        for (int x = 0; x < caracteres.length; x++) {
+        for (char cc : cadena.toCharArray()) {
 
-            int posicion_n = posicionCaracter(cadena, caracteres[x], reverse); 
+            for (char c : caracter.toLowerCase().toCharArray()) {
 
-            if (posicion_n < 0) { continue; }
+                if ( c == cc ) {
 
-            if (reverse == false && (posicion_n < posicion || posicion < 0) ) {
-                posicion = posicion_n;
-            } else if (reverse == true  && (posicion_n > posicion || posicion < 0) ) {
-                posicion = posicion_n;
+                    if ( reverse ) {              
+                        /* restamos uno: el primer indice de un array es 0 */
+                        return ocadena.length() - posicion - 1; 
+                    } else {                   	
+                        return posicion;
+                    }
+                }
             }
+            
+            posicion++;
         }
 
-        return posicion;
+        return -1;
     }
 
 }

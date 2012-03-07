@@ -37,16 +37,16 @@ public class MainTest {
 	}
 
 	@Test
-	public void testPosicionCaracter() {
-		assertEquals("Result", 0, Main.posicionCaracter(testString1, "aeiou", false));
-		assertEquals("Result", 0, Main.posicionCaracter(testString2, "aeiou", false));
-		assertEquals("Result", 0, Main.posicionCaracter(testString3, "aeiou", false));
-		assertEquals("Result", 3, Main.posicionCaracter(testString4, "aeiou", false));
+	public void testPosicionVocal() {
+		assertEquals("Result", 0, Main.posicionVocal(testString1, false));
+		assertEquals("Result", 0, Main.posicionVocal(testString2, false));
+		assertEquals("Result", 0, Main.posicionVocal(testString3, false));
+		assertEquals("Result", 3, Main.posicionVocal(testString4, false));
 		
-		assertEquals("Result", 7, Main.posicionCaracter(testString1, "aeiou", true));
-		assertEquals("Result", 7, Main.posicionCaracter(testString2, "aeiou", true));
-		assertEquals("Result", 7, Main.posicionCaracter(testString3, "aeiou", true));
-		assertEquals("Result", 26, Main.posicionCaracter(testString4, "aeiou", true));
+		assertEquals("Result", 7, Main.posicionVocal(testString1, true));
+		assertEquals("Result", 7, Main.posicionVocal(testString2, true));
+		assertEquals("Result", 7, Main.posicionVocal(testString3, true));
+		assertEquals("Result", 26, Main.posicionVocal(testString4, true));
 	}
 
 }

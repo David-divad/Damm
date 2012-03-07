@@ -16,11 +16,11 @@ class Main {
         System.out.printf("A mayusculas: %s\n", cadena.toUpperCase());
         System.out.printf("A minusculas: %s\n", cadena.toLowerCase());
 
-        System.out.printf("Numero de vocales: %d\n", cuentaCaracteres(cadena, "aeiou") );
-        System.out.printf("Numero de consonantes: %d\n", cuentaCaracteres(cadena, "bcdfghjklmnÃ±pqrstvwxyz") );
+        System.out.printf("Numero de vocales: %d\n", cuentaCaracteres(cadena, "aeiouáéíóú") );
+        System.out.printf("Numero de consonantes: %d\n", cuentaCaracteres(cadena, "bcdfghjklmnñopqrstvwxyz") );
         
-        System.out.printf("Posicion primera vocal: %d\n", posicionCaracter( cadena, "aeiou", false) );
-        System.out.printf("Posicion ultima vocal: %d\n", posicionCaracter( cadena, "aeiou", true) );
+        System.out.printf("Posicion primera vocal: %d\n", posicionVocal( cadena, false) );
+        System.out.printf("Posicion ultima vocal: %d\n", posicionVocal( cadena, true) );
     }
 
     public static int cuentaCaracter(String cadena, char caracter)
@@ -47,18 +47,22 @@ class Main {
         return total;
     }
 
-    public static int posicionCaracter(String ocadena, String caracter, boolean reverse)
+    public static int posicionVocal(String ocadena, boolean reverse)
     {
         String cadena = ocadena.toLowerCase();
         int posicion  = 0;
 
-        if (reverse) cadena = new StringBuffer(ocadena).reverse().toString();   
+        if ( reverse ) cadena = new StringBuffer(cadena).reverse().toString();   
         
         for (char cc : cadena.toCharArray()) {
 
-            for (char c : caracter.toLowerCase().toCharArray()) {
-
-                if ( c == cc ) {
+            switch ( cc ) {
+            
+                case 'a': case 'á':
+                case 'e': case 'é':
+                case 'i': case 'í':
+                case 'o': case 'ó':
+                case 'u': case 'ú':
 
                     if ( reverse ) {              
                         /* restamos uno: el primer indice de un array es 0 */
@@ -66,7 +70,9 @@ class Main {
                     } else {                   	
                         return posicion;
                     }
-                }
+                    /* break; */
+
+                default: break;
             }
             
             posicion++;

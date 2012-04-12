@@ -16,57 +16,70 @@ class MainNacimiento {
 
     public static void main(String[] args) throws NoSuchFieldException 
     {
-        Scanner scanner = new Scanner(System.in);
-
+        Date fechaNacimiento;
+        
         System.out.println("Introduzca su fecha de nacimiento (dd/mm/yyyy):");
 
-        String fechaS = scanner.nextLine();
-
-        SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy");
-
-        Date fecha;
-
         try {
-            fecha = df.parse(fechaS);
+        	Scanner scanner = new Scanner(System.in);
+        	SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy");
+        	
+            fechaNacimiento = df.parse( scanner.nextLine() );
+            
         } catch ( ParseException e ) {
             System.err.println("debe introducir una fecha con el formato adecuado: dd/mm/yyyy");
-            System.err.println("ejemplo: 1/3/1984 ...");
+            System.err.println("ejemplo: 1/3/1984");
             return;
         }
 
-        Date ahora = new Date();
-        GregorianCalendar cFecha = new GregorianCalendar();
-        GregorianCalendar cAhora = new GregorianCalendar();
+        GregorianCalendar calendario = new GregorianCalendar();
 
-        cFecha.setTime(fecha);
-        cAhora.setTime(ahora);
+        calendario.setTime(fechaNacimiento);
 
-        int anio = cFecha.get(Calendar.YEAR);
-        int dia  = cFecha.get(Calendar.DAY_OF_WEEK);
-        int mes  = cFecha.get(Calendar.MONTH);
-
-        int aAnio = cAhora.get(Calendar.YEAR);
-        int aDia  = cAhora.get(Calendar.DAY_OF_WEEK);
-        int aMes  = cAhora.get(Calendar.MONTH);
-
-        if ( anio > aAnio ) {
-            System.err.println("fecha de nacimiento invalida");
-            return;
-        } else if ( anio == aAnio ) {
-            System.out.println("tienes 0 aÃ±os");
+        System.out.printf("Su edad es: %d años\n", calculaEdad( fechaNacimiento ));
+        System.out.printf("Naciste un %s\n", nombreDiaSemana( calendario.get(Calendar.DAY_OF_WEEK) ));
+        System.out.printf("Del mes de %s\n", nombreMes( calendario.get(Calendar.MONTH) ));
+        
+        if ( calendario.isLeapYear( calendario.get(Calendar.YEAR) ) ) {
+        	System.out.println("Que era un año bisiesto");
         } else {
-            int anios = aAnio - anio;
+        	System.out.println("Que no era un año bisiesto");
+        }
+    }
+    
+    public static int calculaEdad(Date fechaNacimiento)
+    {
+        Date fechaActual = new Date();
+        GregorianCalendar calendario = new GregorianCalendar();
 
-            if ( aMes < mes  || (aMes == mes && aDia < dia ) ) {
+        calendario.setTime(fechaActual);
+        
+        int anioActual = calendario.get(Calendar.YEAR);
+        int diaActual  = calendario.get(Calendar.DAY_OF_MONTH);
+        int mesActual  = calendario.get(Calendar.MONTH);
+        
+        calendario.setTime(fechaNacimiento);
+
+        int anioNacimiento = calendario.get(Calendar.YEAR);
+        int diaNacimiento  = calendario.get(Calendar.DAY_OF_MONTH);
+        int mesNacimiento  = calendario.get(Calendar.MONTH);
+        
+        int anios;
+        
+        if ( anioNacimiento > anioActual ) {
+            System.err.println("fecha de nacimiento invalida");
+            return -1;
+        } else if ( anioNacimiento == anioActual ) {
+            return 0;
+        } else {
+            anios = anioActual - anioNacimiento;
+
+            if ( mesActual < mesNacimiento  || (mesActual == mesNacimiento && diaActual < diaNacimiento ) ) {
                 anios--;
             }
-
-            System.out.printf("Su edad es: %d\n", anios);
         }
-
-        System.out.printf("Nacio un %s\n", nombreDiaSemana( cFecha.get(Calendar.DAY_OF_WEEK) ));
-        System.out.printf("Del mes de %s\n", nombreMes( cFecha.get(Calendar.MONTH) ));
-
+        
+        return anios;
     }
 
     public static String nombreDiaSemana(int dia) throws NoSuchFieldException

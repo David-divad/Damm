@@ -7,6 +7,8 @@ class Alumno extends Persona {
     private String grupo;
     private TIPO_HORARIO horario;
 
+    public Alumno( ) {}
+    
     public Alumno( Persona persona, String grupo, TIPO_HORARIO horario )
     {
         super(persona);
@@ -25,7 +27,13 @@ class Alumno extends Persona {
             System.out.printf("El alumno %s %s nacio el año %d y esta en el grupo %s con horario de %s\n",
                     getNombre(), getApellidos(), getAnioNacimiento(), grupo, horario.name());
     }
-
+    
+    
+    public void ver_datos_Alumno()
+    {
+            System.out.printf("El alumno %s %s nacio el año %d y esta en el grupo %s con horario de %s\n",
+                    getNombre(), getApellidos(), getAnioNacimiento(), grupo, horario.name());
+    }
 
     /**
      * Gets the grupo for this instance.

@@ -6,6 +6,8 @@ class Persona {
     private String Apellidos;
     private int AnioNacimiento;
     
+    public Persona(){}
+    
     public Persona(String nombre, String apellidos, int anioNacimiento)
     {
         Nombre = nombre;
@@ -84,5 +86,8 @@ class Persona {
     {
         System.out.printf("%s %s nacio el año %d\n", Nombre, Apellidos, AnioNacimiento);
     }
-
+    public void ver_datos_Persona()
+    {
+        System.out.printf("%s %s nacio el año %d\n", Nombre, Apellidos, AnioNacimiento);
+    }
 }
